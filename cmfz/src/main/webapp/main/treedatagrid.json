@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "甘露明珠",
+    "count": "3",
+    "createDate": "这是时间",
+    "score": "这是分数",
+    "author": "这是名字",
+    "broadCast": "这是播音",
+    "brief": "我是专辑",
+     "img":"http://localhost:8989/final-project6/img/1.jpg",
+
+    "children": [
+      {
+        "id": 2,
+        "name": "甘露明珠1",
+        "size": "120 MB",
+        "url": "a65143dc-5931-4a45-a163-0446d0e9bbfb.amr",
+        "pid":"1",
+        "time":"20分钟"
+      },
+      {
+        "id": 3,
+        "name": "甘露明珠3",
+        "size": "120 MB",
+        "url": "f863cd13-8e14-4801-9252-0d0a665dda15.mp3",
+        "pid":"1",
+        "time":"20分钟"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "甘露",
+    "count": "3",
+    "createDate": "这是时间",
+    "score": "这是分数",
+    "author": "这是名字",
+    "broadCast": "这是播音",
+    "brief": "我是专辑",
+
+    "img":"http://localhost:8989/final-project6/img/1.jpg",
+
+    "children": [
+      {
+        "id": 5,
+        "name": "明珠1",
+        "size": "120 MB",
+        "url": "a65143dc-5931-4a45-a163-0446d0e9bbfb.amr",
+        "pid":"4",
+        "time":"20分钟"
+      },
+      {
+        "id": 6,
+        "name": "明珠3",
+        "size": "120 MB",
+        "url": "f863cd13-8e14-4801-9252-0d0a665dda15.mp3",
+        "pid":"4",
+        "time":"20分钟"
+      }
+    ]
+  }
+]
+
+select d1.id,d1.name,d1.count,d1.createDate,d1.score,d1.author,d1.broadCast,d1.brief,d1.img,
+d2.id,d2.name,d2.size,d2.url,d2.pid,d2.time
+from dd_zj d1
+LEFT JOIN dd_zj d2
+ON d1.id = d2.pid
+where d1.pid is NULL

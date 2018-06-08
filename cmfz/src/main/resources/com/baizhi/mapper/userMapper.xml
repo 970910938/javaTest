@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.UserDao">
+		<resultMap type="Menu" id="d1">
+			<id column="id" property="id"/>
+			<result column="title" property="title"/>
+			<result column="iconCls" property="iconCls"/>
+			<collection property="childern" ofType="Menu">
+				<id column="cid" property="id"/>
+				<result column="ctitle" property="title"/>
+				<result column="ciconCls" property="iconCls"/>
+				<result column="curl" property="url"/>
+			</collection>
+		</resultMap>
+	<select id="queryCategory" resultMap="d1">
+	  select m1.id,m1.title,m1.iconCls,m2.id cid,m2.title ctitle,m2.iconCls ciconCls,m2.url curl
+		from dd_menu m1
+		LEFT JOIN dd_menu m2
+  		on m1.id = m2.parent_id
+		where m1.parent_id IS NULL
+	</select>
+
+</mapper>

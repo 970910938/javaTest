@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.PersonDao">
+	<select id="queryprovince" resultType="Province">
+		  select province name,COUNT(*) value from dd_user GROUP BY province,sex
+		  having sex = #{sex}
+	</select>
+	<select id="queryAll" resultType="Person">
+		select * from dd_user
+	</select>
+	<insert id="insert">
+			INSERT into dd_user VALUES 
+			<foreach collection="list" item="person">
+			(
+			#{person.id},#{person.phoneNum},#{person.username},#{person.password},
+			#{person.salt},#{person.dharmaName},#{person.province},
+			#{person.city},#{person.sex},#{person.sign},#{person.headPic},#{person.date},#{person.status}
+			)
+		</foreach>
+	</insert>
+</mapper>

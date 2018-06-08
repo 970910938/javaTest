@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.BroadDao">
+	<select id="queryAll"  resultType="Broad">
+		SELECT * from dd_broadcast
+	</select>
+
+	<insert id="insert">
+		INSERT into dd_broadcast values(NULL,#{broad.title},#{broad.imgPath},#{broad.des},#{broad.status},#{broad.date})
+	</insert>
+
+	<delete id="delete">
+		delete from dd_broadcast where id=#{broad.id}
+	</delete>
+	<update id="update">
+		update dd_broadcast set title=#{broad.title},des=#{broad.des},status=#{broad.status},date=#{broad.date} where id=#{broad.id}
+	</update>
+
+</mapper>

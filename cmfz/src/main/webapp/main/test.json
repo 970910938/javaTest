@@ -1,0 +1,57 @@
+{
+  "header": [		//顶部轮播图（只有type=all的时候才会有）
+    {
+      "imgPath": "http://www.qq1234.org/uploads/allimg/141103/3_1103200044O91.jpg",
+      "des": "藏密吉祥经院",  //头图描述
+      "id": "2134567"		//头图id
+    },
+    {
+      "thumbnail": "",
+      "desc": "",
+      "id": ""
+    }
+  ],
+
+  "body": [			//列表
+    {
+      "img": "http://wenwen.soso.com/p/20111105/20111105224324-483943250.jpg",
+      "name": "莲师传",	//标题
+      "author": "",		//描述
+      "type": "0",	//类型（0：闻，1：思）
+      "count": "30",	//集数（只有闻的数据才有）
+      "createDate" : "2015.03.1"	//创建时间
+    },
+    {
+      "thumbnail": "http://wenwen.soso.com/p/20111105/20111105224324-483943250.jpg",
+      "title": "密勒日巴尊全传",
+      "author": "",
+      "type": "0",
+      "set_count": "58",
+      "create_date": "2015.04.5"
+    },
+    {
+      "thumbnail": "",
+      "title": "麦彭仁波切与侍者的故事",
+      "author": "上师仁波切",
+      "type": "1",
+      "set_count": "",
+      "create_date": "2015.03.1"
+    },
+    {
+      "thumbnail": "http://wenwen.soso.com/p/20111105/20111105224324-483943250.jpg",
+      "title": "无需花费的布施",
+      "author": "达真堪布",
+      "type": "1",
+      "set_count": "",
+      "create_date": "2015.03.1"
+    },
+    {
+      "thumbnail": "http://wenwen.soso.com/p/20111105/20111105224324-483943250.jpg",
+      "title": "身上不舒服，肯定是冤亲债主",
+      "author": "净空法师",
+      "type": "1",
+      "set_count": "",
+      "create_date": "2015.03.1"
+    }
+  ]
+}

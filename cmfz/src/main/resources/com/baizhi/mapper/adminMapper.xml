@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.AdminDao">
+	<select id="login"  resultType="Admin">
+		select id,name,password FROM  dd_admin where name=#{admin.name} and password=#{admin.password}
+	</select>
+	<update id="modfiy">
+		UPDATE dd_admin SET password=#{admin.password} where id=#{admin.id}
+	</update>
+
+</mapper>
