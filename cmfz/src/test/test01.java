@@ -21,6 +21,11 @@ public class test01 {
        ApplicationContext cc = new ClassPathXmlApplicationContext("spring.xml");
        PersonDao personDao = (PersonDao) cc.getBean("personDao");
       List<Person> list = personDao.queryAll();
-      System.out.println(list);
+      System.out.println("111");
+      System.out.println("111");
+      System.out.println("111");
+      System.out.println("111");
+      System.out.println("111");
+      System.out.println("111");
    }
 }
