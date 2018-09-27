@@ -27,6 +27,7 @@ public class InportUtil {
             InputStream inputStream = multipartFile.getInputStream();
              workbook = new HSSFWorkbook(inputStream);
             Sheet sheet=null;
+            /*一张表225个判断有几张表*/
             for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
                 sheet = workbook.getSheetAt(i);
             }
@@ -35,7 +36,7 @@ public class InportUtil {
             for (int i = 1; i <=rowsnum; i++) {
                 Row row = sheet.getRow(i);
                 Person person = new Person();
-
+                /*lastCellNum是总的格数*/
                 for (int j = 0; j < row.getLastCellNum(); j++) {
                     //Cell cell = row.getCell(j);
                     System.out.println(row.getLastCellNum());

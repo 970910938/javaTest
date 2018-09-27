@@ -33,7 +33,7 @@
 				//console.log(password);
 				$.ajax({
 					url:"${pageContext.request.contextPath}/admin/login",
-					dataType:"json",
+					//dataType:"json",
 					data:{
 					    name:name,
                         password:password,
@@ -41,6 +41,7 @@
                     },
                     success:function (result) {
 					    if(result=="success"){
+					        console.log(result)
 					        window.location.href="${pageContext.request.contextPath}/main/main.jsp";
                         }else{
                             alert("用户名密码错误")

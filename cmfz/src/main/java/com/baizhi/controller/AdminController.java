@@ -46,6 +46,7 @@ public class AdminController {
         String code = encode.toLowerCase();
         session.setAttribute("admin1", admin1);
         String code2 = (String) session.getAttribute("code2");
+        System.out.println(code2);
         if (code.trim().equals(code2.trim()) && admin1 != null) {
             return "success";
         } else {

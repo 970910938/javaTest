@@ -17,37 +17,53 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- spring版本号 -->
-    <spring.version>4.3.6.RELEASE</spring.version>
-    <!-- mybatis版本号 -->
-    <mybatis.version>3.2.4</mybatis.version>
-    <!-- log4j日志文件管理包版本 -->
-    <slf4j.version>1.6.6</slf4j.version>
-    <log4j.version>1.2.9</log4j.version>
+
   </properties>
 
+  <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.7.RELEASE</version>
+  </parent>
+
+
   <dependencies>
+
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20140107</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <!-- scope=compile 的情况（默认compile），也就是说这个项目在编译、测试，运行阶段都需要这个artifact对应的jar包在classpath中 -->
-      <!-- scope=provided ，则可以认为这个provided是目标容器已经provided这个artifact,它只影响到编译、测试阶段，运行阶段，假定目标容器已经提供了这个jar包 -->
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+
+<!--
+    &lt;!&ndash; https://mvnrepository.com/artifact/jstl/jstl &ndash;&gt;
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+-->
+
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.4.1</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.9</version>
-      <scope>test</scope>
+      <version>4.12</version>
     </dependency>
 
 
@@ -78,92 +94,29 @@
       <version>1.9</version>
     </dependency>
 
-    <!-- 格式化对象，方便输出日志 -->
+     <!--格式化对象，方便输出日志-->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>1.1.41</version>
     </dependency>
 
-    <dependency>
+  <!--  <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>jsp-api</artifactId>
       <version>6.0.32</version>
       <scope>provided</scope>
-    </dependency>
+    </dependency>-->
 
-    <!-- spring 核心包 -->
-    <!-- springframe start -->
 
-    <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
       <version>1.7.1</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-oxm</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-tx</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <!-- springframe end -->
-
-    <!-- mybatis核心包 -->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>${mybatis.version}</version>
-    </dependency>
 
     <dependency>
       <groupId>org.mybatis.generator</groupId>
@@ -171,12 +124,7 @@
       <version>1.3.2</version>
     </dependency>
 
-    <!-- mybatis/spring包 -->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-spring</artifactId>
-      <version>1.2.2</version>
-    </dependency>
+
 
     <!-- mysql -->
     <dependency>
@@ -221,30 +169,15 @@
       <version>1.0.2</version>
     </dependency>
 
-    <!-- 日志文件管理包 -->
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>${log4j.version}</version>
-    </dependency>
 
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi</artifactId>
       <version>3.17</version>
     </dependency>
+
+
 
     <dependency>
       <groupId>com.aliyun</groupId>
@@ -257,12 +190,85 @@
       <version>1.1.0</version>
     </dependency>
 
+    <!--web依赖-->
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!--测试依赖-->
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+
+    <!--外部tomcat的支持-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+
+    <!--jsp的解析依赖-->
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-jasper</artifactId>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-core</artifactId>
+      <version>4.4.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-analyzers-common -->
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-analyzers-common</artifactId>
+      <version>4.4.0</version>
+    </dependency>
+
   </dependencies>
   <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 
 
   <build>
     <finalName>cmfz</finalName>
+    <plugins>
+
+      <!--jsp运行插件-->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <dependencies>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.35</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <!--配置文件的路径 -->
+          <configurationFile>${basedir}/src/main/resources/generatorConfig.xml</configurationFile>
+          <overwrite>true</overwrite>
+        </configuration>
+      </plugin>
+
+    </plugins>
   </build>
 </project>
 

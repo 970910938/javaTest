@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * string 为注解属性类型
  * name 为属性
  */
-@Target(ElementType.METHOD)
+@Target(ElementType.METHOD )
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LogAnnotation {
     /*通过反射可获取service方法上所加该注解的方法名*/
