@@ -22,5 +22,16 @@ public class test01 {
        PersonDao personDao = (PersonDao) cc.getBean("personDao");
       List<Person> list = personDao.queryAll();
       System.out.println(list);
+      System.out.println(list);
+      System.out.println(list);
+      System.out.println(list);
+      System.out.println(list);
+      System.out.println(list);
+      System.out.println(list);
+
+
+
+
+
    }
 }
